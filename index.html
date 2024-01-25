@@ -17,7 +17,11 @@
     <h1 class="page-title">Cyber Pokemon</h1>
     <form class="game-options">
       <label for="gameOption1" class="game-options__label"
-      ><input id="gameOption1" type="radio" value="4" class="game-options__input" />
+      ><input id="gameOption1"
+              type="radio"
+              value="4"
+              class="game-options__input"
+              v-model = "gameData.selectLevel"/>
         <svg width="20px" height="20px" viewBox="0 0 20 20">
           <circle cx="10" cy="10" r="9"></circle>
           <path
@@ -32,7 +36,7 @@
         <span class="game-options__text"> 4 </span></label
       >
       <label for="gameOption2" class="game-options__label"
-      ><input id="gameOption2" type="radio" value="6" class="game-options__input" />
+      ><input id="gameOption2" type="radio" value="6" class="game-options__input" v-model = "gameData.selectLevel" />
         <svg width="20px" height="20px" viewBox="0 0 20 20">
           <circle cx="10" cy="10" r="9"></circle>
           <path
@@ -47,7 +51,7 @@
         <span class="game-options__text"> 6 </span></label
       >
       <label for="gameOption3" class="game-options__label"
-      ><input id="gameOption3" type="radio" value="8" class="game-options__input" />
+      ><input id="gameOption3" type="radio" value="8" class="game-options__input" v-model = "gameData.selectLevel" />
         <svg width="20px" height="20px" viewBox="0 0 20 20">
           <circle cx="10" cy="10" r="9"></circle>
           <path
@@ -62,7 +66,7 @@
         <span class="game-options__text"> 8 </span></label
       >
       <label for="gameOption4" class="game-options__label"
-      ><input id="gameOption4" type="radio" value="10" class="game-options__input" />
+      ><input id="gameOption4" type="radio" value="10" class="game-options__input" v-model = "gameData.selectLevel" />
         <svg width="20px" height="20px" viewBox="0 0 20 20">
           <circle cx="10" cy="10" r="9"></circle>
           <path
@@ -97,7 +101,7 @@
         <div class="game-card__face game-card-back"><div class="game-card-back__inner">?</div></div>
       </li>
     </ul>
-    <button class="button button--game">Reset Game</button>
+    <button class="button button--game" @click="handleResetGame">Reset Game</button>
     <div v-if="gameResult.win" class="game-result game-result--win">Win</div>
     <div v-if="gameResult.lost" class="game-result game-result--lose">Lost</div>
     <!---->
