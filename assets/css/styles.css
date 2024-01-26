@@ -469,6 +469,7 @@ https://github.com/animate-css/animate.css/blob/main/source/attention_seekers/sh
 .game-options__text {
   display: inline-block;
   vertical-align: middle;
+  margin-left: 5px;
 }
 
 /*** GAME DATA ***/

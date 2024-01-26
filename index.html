@@ -13,7 +13,7 @@
 <div id="app">
   <div class="page-content">
     <!-- <div class="current-date-time"></div> -->
-    <img src="assets/images/cyberlearn-min-new-opt2.png" alt="" class="logo-pokemon" />
+<!--    <img src="assets/images/cyberlearn-min-new-opt2.png" alt="" class="logo-pokemon" />-->
     <h1 class="page-title">Cyber Pokemon</h1>
     <form class="game-options">
       <label for="gameOption1" class="game-options__label"
@@ -86,7 +86,8 @@
         Select remain : {{gameData.selectRemain}}
       </p>
     </div>
-    <ul class="game-list-cards">
+    <ul class="game-list-cards"
+        :class="{'game-list-cards--8' : gameData.selectLevel == 8 , 'game-list-cards--10' : gameData.selectLevel == 10}">
       <li v-for="(card , index) in cards"
           :key="index" class="game-card"
           :class="{'is-covered' : coveredCard.includes(card), 'is-uncovered' : unconveredCard.includes(card)}"
@@ -101,7 +102,7 @@
         <div class="game-card__face game-card-back"><div class="game-card-back__inner">?</div></div>
       </li>
     </ul>
-    <button class="button button--game" @click="handleResetGame">Reset Game</button>
+    <button class="button button--game" @click="handleResetGame(gameData.selectLevel)">Reset Game</button>
     <div v-if="gameResult.win" class="game-result game-result--win">Win</div>
     <div v-if="gameResult.lost" class="game-result game-result--lose">Lost</div>
     <!---->

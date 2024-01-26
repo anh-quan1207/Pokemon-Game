@@ -1795,7 +1795,7 @@ Vue.createApp({
                     this.pairedCard.push(card1);
                     this.pairedCard.push(card2);
                 } else {
-                    this.gameData.selectRemain = this.gameData.selectRemain - 1;
+                    this.gameData.selectRemain = Math.max(0, this.gameData.selectRemain - 1);
                 }
                 setTimeout(() => {
                     this.selectedCard = [];
